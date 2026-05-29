@@ -1,58 +1,43 @@
 ---
 export const prerender = true
 
-import { getCollection, getEntryBySlug } from 'astro:content'
+import { getCollection } from 'astro:content'
 import DefaultPageLayout from '$/layouts/default.astro'
 import PostPreviewList from '$/components/PostPreviewList.astro'
-import Prose from '$/components/Prose.astro'
-import { Content as AboutAstroInk } from './_astro-ink.md'
-
 
 const title = 'Home'
-const description = 'Astro-Ink is a crisp, minimal, personal blog theme for Astro'
+const description = 'Ruben De Raeve — Software engineer, geometric algorithms, CAD software'
 
 const posts = await getCollection('blog')
 ---
 <DefaultPageLayout content={{ title, description }} showPageHeader={false}>
-    <div class="hero ">
-        <div class="hero__face">
-            <div class="author-card">
-                <img src="https://assets.website-files.com/5e51c674258ffe10d286d30a/5e5358878e2493fbea064dd9_peep-59.svg" title="Aalam" />
-            </div>
+    <section class="hero">
+        <h1 class="hero__heading">
+            Software engineer crafting <em>geometric algorithms and CAD software</em>, writing about the experience.
+        </h1>
+        <p class="hero__intro">
+            I'm Ruben — a C++ developer at Bricsys in Ghent, Belgium. I work on geometric modeling, computational geometry, and the internals of BricsCAD. Previously I built cutting optimization algorithms and did high-voltage research in Switzerland.
+        </p>
+    </section>
+    <section class="mt-16">
+        <PostPreviewList posts={posts.slice(0, 4)} heading="Recent writing"/>
+        <div class="flex justify-end py-4">
+            <a class="text-sm font-mono text-zinc-500 hover:text-[#4ade80] transition-colors" href="/blog">all posts →</a>
         </div>
-        <div class="hero__says">
-            <Prose>
-                <AboutAstroInk/>
-            </Prose>
-        </div>
-    </div>
-    <hr/>
-    <PostPreviewList posts={posts.slice(0, 3)} heading="recent posts"/>
-    <div class="page__actions">
-        <a class="action__go-to-blog ink-h" href="/blog" title="All Posts">All Posts &rarr;</a>
-    </div>
+    </section>
 </DefaultPageLayout>
 
 <style>
     .hero {
-        @apply flex flex-col md:flex-row gap-8 w-full transition-all pb-4
+        @apply py-12 md:py-20;
     }
-    .hero__face {
-        @apply flex md:flex-none justify-center
+    .hero__heading {
+        @apply text-3xl md:text-5xl leading-tight font-serif text-white;
     }
-    .hero__says {
-        @apply flex-1 text-center md:text-left
+    .hero__heading em {
+        @apply text-[#4ade80] not-italic;
     }
-    .author-card {
-        @apply  h-48 w-48 md:h-56 bg-theme-primary dark:bg-theme-dark-primary rounded-full md:rounded-md shadow-lg
-    }
-    .author-card img {
-        @apply rounded-full h-48 w-48 md:h-56
-    }
-    .page__actions {
-        @apply flex justify-center md:justify-end py-6
-    }
-    .action__go-to-blog {
-        @apply py-4 hover:underline
+    .hero__intro {
+        @apply mt-6 text-lg text-zinc-400 max-w-2xl leading-relaxed;
     }
 </style>

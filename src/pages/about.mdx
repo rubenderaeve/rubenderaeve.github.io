@@ -1,25 +1,72 @@
 ---
-title: 'About'
-description: 'There is a simple secret to building a faster website — just ship less.'
+layout: $/layouts/default.astro
+title: About
 ---
-import DefaultPageLayout from '$/layouts/default.astro'
-import Prose from '$/components/Prose.astro'
 
-<DefaultPageLayout content={{ title: frontmatter.title, description: frontmatter.description }}>
-    <Prose>
-            **Astro-Ink** is a crisp, minimal, personal blog theme for Astro, that shows the capability of statically built sites - offering all the goodness and DX of the modern JS ecosystem without actually shipping any JS by default.
+<h1 class="text-3xl md:text-5xl font-serif text-white leading-tight mb-8">
+Hi, I'm Ruben. I build <em class="text-[#4ade80] not-italic">CAD software and geometric algorithms</em>, and write about the craft.
+</h1>
 
-            **Astro-ink** strives to remain minimal & performant while still offering you all the bells and whistles you expect in a personal blog system. Please check the [README](https://github.com/one-aalam/astro-ink/blob/main/README.md) to know about all the features. 
+I'm a software engineer at **Bricsys** in Ghent, Belgium, where I work on the geometric modeling kernel of BricsCAD. My day-to-day is C++ — computational geometry, Boolean operations, surface intersections, and the kind of algorithmic problems that keep you up at night (in a good way).
 
-            ## Author
-            Aftab Alam // [@aftabbuddy](https://twitter.com/aftabbuddy)  // [one-aalam](https://github.com/one-aalam)
-            <div class="author">
-                <img class="rounded-full" width="160" src="https://assets.website-files.com/5e51c674258ffe10d286d30a/5e5358878e2493fbea064dd9_peep-59.svg" title="Aalam" />
-            </div>
+Before CAD, I built cutting and optimization algorithms for industrial food processing at MARELEC, and before that I did high-voltage research at ABB in Switzerland — testing circuit breakers, building signal processing pipelines, and learning that hardware has a way of humbling you.
 
-            ### Credits
-            **Illustrations:** [openpeeps](https://www.openpeeps.com/)
-    </Prose>
-</DefaultPageLayout>
+I studied electromechanical engineering at UGent with an Erasmus year in Grenoble, and I'm currently doing a postgraduate in Applied AI at Howest.
 
+---
 
+## Work
+
+<div class="timeline">
+  <div class="timeline__item">
+    <span class="timeline__date">2023 — Present</span>
+    <span class="timeline__role">Software Engineer, **Bricsys** (Ghent)</span>
+    <span class="timeline__desc">C++ CAD development, geometric algorithms, Boolean operations</span>
+  </div>
+  <div class="timeline__item">
+    <span class="timeline__date">2021 — 2023</span>
+    <span class="timeline__role">Software Engineer, **MARELEC Food Technologies**</span>
+    <span class="timeline__desc">C++ cutting/optimization algorithms for industrial food processing</span>
+  </div>
+  <div class="timeline__item">
+    <span class="timeline__date">2021</span>
+    <span class="timeline__role">Testing Specialist, **Hitachi ABB Power Grids** (Switzerland)</span>
+    <span class="timeline__desc">High-voltage lab testing, Python automation</span>
+  </div>
+  <div class="timeline__item">
+    <span class="timeline__date">2019 — 2020</span>
+    <span class="timeline__role">Research Intern, **ABB** (Switzerland)</span>
+    <span class="timeline__desc">HV circuit breakers, signal processing, data analysis</span>
+  </div>
+</div>
+
+---
+
+## Education
+
+<div class="timeline">
+  <div class="timeline__item">
+    <span class="timeline__date">2025 — 2026</span>
+    <span class="timeline__role">Applied AI (Postgraduate), **Howest**</span>
+  </div>
+  <div class="timeline__item">
+    <span class="timeline__date">2017 — 2019</span>
+    <span class="timeline__role">MSc Electromechanical Engineering, **UGent** — magna cum laude</span>
+  </div>
+  <div class="timeline__item">
+    <span class="timeline__date">2017 — 2018</span>
+    <span class="timeline__role">MSc Energy Systems, **INP Grenoble** (Erasmus)</span>
+  </div>
+  <div class="timeline__item">
+    <span class="timeline__date">2014 — 2017</span>
+    <span class="timeline__role">BSc Electromechanical Engineering, **UGent** — cum laude</span>
+  </div>
+</div>
+
+---
+
+## How to reach me
+
+The best way is email: [ruben.deraeve@gmail.com](mailto:ruben.deraeve@gmail.com)
+
+You can also find me on [GitHub](https://github.com/rubenderaeve) or [LinkedIn](https://linkedin.com/in/rubenderaeve).

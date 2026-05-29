@@ -1,65 +1,65 @@
 const { fontFamily } = require('tailwindcss/defaultTheme')
 const config = require('./tailwind.theme.config.cjs')
-/**
- * Find the applicable theme color palette, or use the default one
- */
 const themeConfig = process.env.THEME_KEY && config[process.env.THEME_KEY] ? config[process.env.THEME_KEY] : config.default
 const { colors } = themeConfig
 module.exports = {
     darkMode: 'class',
     content: [
         './public/**/*.html',
-        './src/**/*.{astro,js,ts}'
+        './src/**/*.{astro,js,ts,svelte,mdx}'
     ],
     safelist: ['dark'],
     theme: {
 		fontFamily: {
-			sans: ['Fira Code', ...fontFamily.sans],
+			sans: ['Inter', ...fontFamily.sans],
+			mono: ['Fira Code', ...fontFamily.mono],
+            serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
 		},
 		extend: {
             colors: {
                 theme: {
                     ...colors
-                }
+                },
+                background: '#0a0a0a',
+                surface: '#1a1a1a',
+                border: '#2a2a2a',
             },
             typography: (theme) => ({
                 dark: {
                     css: {
-                        color: theme("colors.gray.200"),
+                        color: '#e5e5e5',
+                        a: {
+                            color: '#4ade80',
+                            '&:hover': { color: '#22c55e' },
+                        },
                         blockquote: {
-                            color: colors.dark.primary,
-                            borderColor: colors.primary
+                            color: '#4ade80',
+                            borderColor: '#2a2a2a'
                         },
-                        'blockquote > p::before, p::after': {
-                            color: colors.primary,
-                        },
+                        h1: { color: '#ffffff' },
+                        h2: { color: '#ffffff' },
+                        h3: { color: '#ffffff' },
+                        h4: { color: '#ffffff' },
+                        strong: { color: '#e5e5e5' },
                     },
                 },
                 DEFAULT: {
                     css: {
+                        color: '#e5e5e5',
                         a: {
-                            color: colors.dark.primary,
-                              '&:hover': {
-                                color: colors.primary,
-                              },
+                            color: '#4ade80',
+                            '&:hover': { color: '#22c55e' },
                         },
                         blockquote: {
-                            color: colors.primary,
-                            fontSize: theme("fontSize.2xl"),
-                            borderColor: colors.dark.primary,
+                            color: '#4ade80',
+                            borderColor: '#2a2a2a',
                         },
-                        'blockquote > p::before, p::after': {
-                            color: colors.dark.primary,
-                        },
-                        h1: {
-                            color: colors.dark.secondary,
-                        },
-                        h2: {
-                            color: colors.dark.secondary,
-                        },
-                        h3: {
-                            color: colors.dark.secondary,
-                        },
+                        h1: { color: '#ffffff' },
+                        h2: { color: '#ffffff' },
+                        h3: { color: '#ffffff' },
+                        h4: { color: '#ffffff' },
+                        strong: { color: '#e5e5e5' },
+                        code: { color: '#4ade80' },
                     }
                 },
             }),

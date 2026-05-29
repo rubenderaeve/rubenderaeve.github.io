@@ -7,15 +7,7 @@ export const NAV_ITEMS: NavItems = {
 	},
 	blog: {
 		path: "/blog",
-		title: "blog",
-	},
-	tags: {
-		path: "/tags",
-		title: "tags",
-	},
-	media: {
-		path: "/media",
-		title: "media",
+		title: "writing",
 	},
 	about: {
 		path: "/about",
@@ -24,35 +16,26 @@ export const NAV_ITEMS: NavItems = {
 };
 
 export const SITE = {
-	// Your site's detail?
-	name: "Ink",
-	title: "Astro - Ink",
-	description: "Crisp, minimal, personal blog theme for Astro",
-	url: "https://astro-ink.vercel.app",
-	githubUrl: "https://github.com/one-aalam/astro-ink",
-	listDrafts: true,
-	image:
-		"https://raw.githubusercontent.com/one-aalam/astro-ink/main/public/astro-banner.png",
-	// YT video channel Id (used in media.astro)
+	name: "Ruben De Raeve",
+	title: "Ruben De Raeve — Software Engineer",
+	description: "Writing about algorithms, C++, machine learning, and the craft of building software.",
+	url: "https://rubenderaeve.dev",
+	githubUrl: "https://github.com/rubenderaeve",
+	listDrafts: false,
+	image: "",
 	ytChannelId: "",
-	// Optional, user/author settings (example)
-	// Author: name
-	author: "", // Example: Fred K. Schott
-	// Author: Twitter handler
-	authorTwitter: "", // Example: FredKSchott
-	// Author: Image external source
-	authorImage: "", // Example: https://pbs.twimg.com/profile_images/1272979356529221632/sxvncugt_400x400.jpg, https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png
-	// Author: Bio
+	author: "Ruben De Raeve",
+	authorTwitter: "",
+	authorImage: "",
 	authorBio:
-		"Crisp, minimal, personal blog theme for Astro. Crisp, minimal, personal blog theme for Astro. Crisp, minimal, personal blog theme for Astro",
+		"Software engineer building CAD software in C++. Background in electromechanical engineering, applied AI, and geometric algorithms. Based in Belgium.",
 };
 
-// Ink - Theme configuration
 export const PAGE_SIZE = 8;
 export const USE_POST_IMG_OVERLAY = false;
-export const USE_MEDIA_THUMBNAIL = true;
+export const USE_MEDIA_THUMBNAIL = false;
 
 export const USE_AUTHOR_CARD = true;
-export const USE_SUBSCRIPTION = false; /* works only when USE_AUTHOR_CARD is true */
+export const USE_SUBSCRIPTION = false;
 
-export const USE_VIEW_STATS = true;
+export const USE_VIEW_STATS = false;
