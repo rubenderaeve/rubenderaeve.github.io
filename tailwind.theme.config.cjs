@@ -1,18 +1,18 @@
 module.exports = {
     default: {
         colors: {
-            primary: '#4ade80',
-            secondary: '#22c55e',
+            primary: '#047857',
+            secondary: '#065f46',
             dark: {
                 primary: '#4ade80',
                 secondary: '#22c55e'
             },
             accent: {
                 gray: {
-                    light: '#a1a1aa',
+                    light: '#525252',
                     dark: '#52525b'
                 },
-                default: '#4ade80'
+                default: '#047857'
             }
         }
     }

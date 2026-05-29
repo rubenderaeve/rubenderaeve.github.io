@@ -7,14 +7,15 @@ const segment = path === '/' ? '~' : path.replace(/\/$/, '').replace(/^\//, '~/'
 
 <header class="header">
     <div class="header__prompt">
-        <span class="text-[#4ade80]">ruben</span>
+        <span class="text-emerald-600 dark:text-[#4ade80]">ruben</span>
         <span class="text-zinc-500"> @deraeve</span>
-        <span class="text-zinc-600"> :{segment}$</span>
+        <span class="text-zinc-400 dark:text-zinc-600"> :{segment}$</span>
     </div>
     <nav class="header__nav">
         <a href="/" class:list={["header__link", { active: path === '/' }]}>home</a>
         <a href="/blog" class:list={["header__link", { active: path.startsWith('/blog') }]}>writing</a>
         <a href="/about" class:list={["header__link", { active: path === '/about' }]}>about</a>
+        <a href="/uses" class:list={["header__link", { active: path === '/uses' }]}>uses</a>
         <a href="https://github.com/rubenderaeve" class="header__link" target="_blank" rel="noopener">github ↗</a>
         <ModeSwitcherBtn client:visible />
     </nav>
@@ -22,7 +23,7 @@ const segment = path === '/' ? '~' : path.replace(/\/$/, '').replace(/^\//, '~/'
 
 <style>
     .header {
-        @apply flex items-center justify-between py-4 px-0 font-mono text-sm border-b border-[#2a2a2a];
+        @apply flex items-center justify-between py-4 px-0 font-mono text-sm border-b border-zinc-200 dark:border-[#2a2a2a];
     }
     .header__prompt {
         @apply tracking-tight;
@@ -31,9 +32,9 @@ const segment = path === '/' ? '~' : path.replace(/\/$/, '').replace(/^\//, '~/'
         @apply flex items-center gap-5;
     }
     .header__link {
-        @apply text-zinc-500 hover:text-[#4ade80] transition-colors;
+        @apply text-zinc-600 dark:text-zinc-500 hover:text-emerald-700 dark:hover:text-[#4ade80] transition-colors;
     }
     .header__link.active {
-        @apply text-[#e5e5e5];
+        @apply text-zinc-900 dark:text-[#e5e5e5];
     }
 </style>

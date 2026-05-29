@@ -13,6 +13,10 @@ export const NAV_ITEMS: NavItems = {
 		path: "/about",
 		title: "about",
 	},
+	uses: {
+		path: "/uses",
+		title: "uses",
+	},
 };
 
 export const SITE = {

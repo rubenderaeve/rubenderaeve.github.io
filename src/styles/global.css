@@ -1,7 +1,7 @@
 @tailwind base;
 @layer base {
 	html {
-		@apply bg-[#0a0a0a] text-[#e5e5e5];
+		@apply bg-white text-zinc-900;
 	}
 	html.dark {
 		@apply bg-[#0a0a0a] text-[#e5e5e5];
@@ -18,42 +18,59 @@
 
 /* Ink specific styles */
 .ink-h {
-    @apply inline-block text-sm font-bold uppercase drop-shadow-lg py-4 tracking-wider opacity-70;
+    @apply inline-block text-sm font-bold uppercase drop-shadow-lg py-4 tracking-wider text-zinc-700;
+}
+html.dark .ink-h {
+    @apply text-zinc-400;
 }
 
 ::-webkit-scrollbar {
 	@apply w-2;
 }
 
-::-webkit-scrollbar-track {
+html.dark ::-webkit-scrollbar-track {
 	@apply bg-[#1a1a1a];
 }
-
-::-webkit-scrollbar-thumb {
+html.dark ::-webkit-scrollbar-thumb {
 	@apply bg-[#2a2a2a] rounded-full;
+}
+html:not(.dark) ::-webkit-scrollbar-track {
+	@apply bg-zinc-100;
+}
+html:not(.dark) ::-webkit-scrollbar-thumb {
+	@apply bg-zinc-300 rounded-full;
 }
 
 /** Code block **/
-.astro-code {
+html.dark .astro-code {
 	@apply relative shadow-inner mt-0 bg-[#1a1a1a] border border-[#2a2a2a] rounded-md;
 }
+html:not(.dark) .astro-code {
+	@apply relative shadow-inner mt-0 bg-zinc-50 border border-zinc-200 rounded-md;
+}
 .remark-code-title {
-	@apply inline-block relative top-4 px-2 pt-1 pb-5 text-sm text-[#4ade80] bg-[#1a1a1a] rounded-t-md;
+	@apply inline-block relative top-4 px-2 pt-1 pb-5 text-sm rounded-t-md;
+}
+html.dark .remark-code-title {
+	@apply text-[#4ade80] bg-[#1a1a1a];
+}
+html:not(.dark) .remark-code-title {
+	@apply text-emerald-700 bg-zinc-50;
 }
 
-/** Shiki theme - Dark mode always **/
+/** Shiki theme **/
 :root {
-	--astro-code-color-text: #c9d1d9;
-	--astro-code-color-background: #1a1a1a;
-	--astro-code-token-constant: #79c0ff;
-	--astro-code-token-string: #a5d6ff;
-	--astro-code-token-comment: #8b949e;
-	--astro-code-token-keyword: #ff7b72;
-	--astro-code-token-parameter: #c9d1d9;
-	--astro-code-token-function: #d2a8ff;
-	--astro-code-token-string-expression: #a5d6ff;
-	--astro-code-token-punctuation: #c9d1d9;
-	--astro-code-token-link: #4ade80;
+	--astro-code-color-text: #24292f;
+	--astro-code-color-background: #f8fafc;
+	--astro-code-token-constant: #0550ae;
+	--astro-code-token-string: #0a3069;
+	--astro-code-token-comment: #6e7781;
+	--astro-code-token-keyword: #cf222e;
+	--astro-code-token-parameter: #24292f;
+	--astro-code-token-function: #8250df;
+	--astro-code-token-string-expression: #0a3069;
+	--astro-code-token-punctuation: #24292f;
+	--astro-code-token-link: #116329;
 }
 
 html.dark {
@@ -74,14 +91,20 @@ html.dark {
 .timeline {
 	@apply space-y-4 my-6;
 }
-.timeline__item {
+html.dark .timeline__item {
 	@apply flex flex-col gap-0.5 pl-4 border-l-2 border-[#2a2a2a] py-2;
+}
+html:not(.dark) .timeline__item {
+	@apply flex flex-col gap-0.5 pl-4 border-l-2 border-zinc-200 py-2;
 }
 .timeline__date {
 	@apply font-mono text-sm text-zinc-500;
 }
-.timeline__role {
+html.dark .timeline__role {
 	@apply text-[#e5e5e5];
+}
+html:not(.dark) .timeline__role {
+	@apply text-zinc-900;
 }
 .timeline__desc {
 	@apply text-sm text-zinc-500;
