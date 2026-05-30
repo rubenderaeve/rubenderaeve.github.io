@@ -16,8 +16,7 @@ import remarkCodeTitles from 'remark-code-titles'
 // https://astro.build/config
 export default defineConfig( /** @type {import('astro').AstroUserConfig} */{
   output: 'static',
-  site: 'https://rubenderaeve.github.io',
-  base: '/site', // Your public domain, e.g.: https://my-site.dev/. Used to generate sitemaps and canonical URLs.
+  site: 'https://rubenderaeve.github.io', // Your public domain, e.g.: https://my-site.dev/. Used to generate sitemaps and canonical URLs.
   server: {
     // port: 4321, // The port to run the dev server on.
   },
